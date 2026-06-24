@@ -1,4 +1,5 @@
 // app/api/bookings/route.ts
+export const runtime = 'nodejs';
 import { NextRequest, NextResponse } from 'next/server';
 import { createZoomMeeting } from '@/lib/zoom';
 import { createCalendarEvent, getBusyTimes } from '@/lib/googleCalendar';

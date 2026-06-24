@@ -88,3 +88,94 @@ export default function Hero() {
     </section>
   );
 }
+
+// "use client";
+
+// import { motion } from "framer-motion";
+// import Link from "next/link";
+
+// const items = [
+//   {
+//     title: "Personalised 1-to-1 STEM Tutoring",
+//     bg: "bg-blue-100",
+//     icon: "👤",
+//   },
+//   {
+//     title: "Flexible Online Lessons",
+//     bg: "bg-violet-200",
+//     icon: "💻",
+//   },
+//   {
+//     title: "Range of Subjects",
+//     bg: "bg-red-100",
+//     icon: "📘",
+//   },
+//   {
+//     title: "University Admission Support",
+//     bg: "bg-amber-100",
+//     icon: "🎓",
+//   },
+// ];
+
+// export default function Hero() {
+//   return (
+//     <section className="section grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[70vh]">
+//       <motion.div
+//         initial={{ opacity: 0, y: 20 }}
+//         animate={{ opacity: 1, y: 0 }}
+//         transition={{ duration: 0.6 }}
+//       >
+//         <p className="uppercase tracking-widest text-xs md:text-sm text-teal-600 mb-4">
+//           Cambridge & Bristol Based
+//         </p>
+
+//         <h1 className="text-3xl md:text-5xl font-semibold leading-tight text-navy">
+//           University-level STEM tutors providing structured academic support.
+//         </h1>
+
+//         <p className="mt-5 md:mt-7 text-sm md:text-lg text-slate-600 leading-6 md:leading-8 max-w-xl">
+//           Structured online tuition tailored to individual learning needs,
+//           focused on clarity, exam performance, and confidence building.
+//         </p>
+
+//         <div className="mt-6 md:mt-10 flex flex-col sm:flex-row gap-3 md:gap-5">
+//           <Link
+//             href="/subjects"
+//             className="rounded-full bg-navy text-white px-5 py-3 md:px-7 md:py-4 text-sm md:text-base text-center"
+//           >
+//             Explore Subjects
+//           </Link>
+
+//           <Link
+//             href="/book-meeting"
+//             className="rounded-full border border-slate-300 px-5 py-3 md:px-7 md:py-4 text-sm md:text-base text-center bg-green-100 hover:bg-green-200"
+//           >
+//             Book Free Meeting
+//           </Link>
+//         </div>
+//       </motion.div>
+
+//       <motion.div
+//         initial={{ opacity: 0 }}
+//         animate={{ opacity: 1 }}
+//         transition={{ delay: 0.2 }}
+//       >
+//         <div className="rounded-2xl bg-white p-5 md:p-8 shadow-sm">
+//           <div className="grid grid-cols-2 gap-3 md:gap-6">
+//             {items.map((item) => (
+//               <div
+//                 key={item.title}
+//                 className={`rounded-xl p-4 md:p-6 border border-slate-200 flex flex-col items-center gap-2 md:gap-3 ${item.bg}`}
+//               >
+//                 <div className="text-xl md:text-2xl">{item.icon}</div>
+//                 <h3 className="text-xs md:text-base font-medium text-navy text-center">
+//                   {item.title}
+//                 </h3>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </motion.div>
+//     </section>
+//   );
+// }
