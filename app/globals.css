@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: #f8fafc;
+  color: #0f172a;
+  font-family: Inter, sans-serif;
+}
+
+.section {
+  @apply max-w-7xl mx-auto px-6 py-24;
+}
