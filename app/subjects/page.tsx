@@ -39,10 +39,10 @@ const subjects: Subject[] = [
     bg: "bg-cyan-100",
     iconColor: "text-cyan-600",
     description:
-      "In-depth guidance in physics concepts and problem-solving techniques. Support for A-levels, IB, and university-level courses. Experience in helping students understand complex topics and excel in exams.",
+      "In-depth guidance in physics concepts and problem-solving techniques. Support for GCSE, A-levels, IB, and university-level courses. Experience in helping students understand complex topics and excel in exams.",
   },
   {
-    name: "+ Many other subjects and university-level admission support",
+    name: "+ Other subjects on request and university admission support",
     bg: "bg-amber-100",
     iconColor: "text-amber-600",
     description:

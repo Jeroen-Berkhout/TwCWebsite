@@ -160,7 +160,7 @@ export default function PricingPage() {
           Have a question about pricing?
         </h2>
         <p className="mx-auto mt-3 max-w-2xl text-sm text-slate-600">
-          Get in touch to arrange a meeting or talk through what would work
+          Such as discounts for existing students? Get in touch to arrange a meeting or talk through what would work
           best for your family.
         </p>
         <a

@@ -49,10 +49,19 @@ const tutors: Tutor[] = [
         avatarColor: "bg-blue-400",
         text: "My daughter did tutoring with Jeroen during Y13 for A level edexcel chemistry. She found lessons with Jeroen engaging, structured and helpful for her A level preparation. Maths in chemisty, topic 5 for her A level, was particularly well covered. Each lesson was an hour long and questions were prepared beforehand by Jeroen based on suggestions from my daughter. This collaborative approach helped my daughter direct her learning and fill the gaps in her knowledge and skills. Over the course of the year, my daughter found the tutor-student relationship to be one of the most important aspects to having effective tutoring sessions. The developed rapport between her and Jeroen made lessons fun and comfortable which she found to be important. When she needed to reschedule, she did so without issue and they found an alternative time for their lesson. Ultimately, both her and I are very lucky to have had the opportunity to work with Jeroen and we wholeheartedly recommend him to other parents and their students doing chemistry A level.",
       },
+      {
+        initials: "SS",
+        name: "Sagi",
+        role: "Parent from London",
+        date: "24 Jun",
+        rating: 5,
+        avatarColor: "bg-emerald-400",
+        text: "Jeroen has been an excellent Math tutor for my son (Year 9). Reliable and consistent, super friendly, and a great listener. He's always well prepared, keeps each session focused, and explains complex concepts in a way that genuinely clicks. He keeps my son engaged the whole way through - highly recommended."
+      },
     ],
   },
   {
-    slug: "Tom Iddon",
+    slug: "tom-iddon",
     name: "Tom Iddon",
     subjectTag: "STEM tutor · A-level and GCSE · MSci Chemistry with Computing",
     photo: "/tutors/tom.jpg",
