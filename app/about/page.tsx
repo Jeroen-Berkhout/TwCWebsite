@@ -121,7 +121,7 @@ export default function AboutPage() {
           you.
         </p>
         <a
-          href="/contact"
+          href="/book-meeting"
           className="mt-6 inline-block rounded-full bg-navy px-8 py-3 text-sm font-semibold text-white transition hover:bg-navy/90"
         >
           Get in touch

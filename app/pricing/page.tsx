@@ -164,7 +164,7 @@ export default function PricingPage() {
           best for your family.
         </p>
         <a
-          href="/contact"
+          href="/book-meeting"
           className="mt-5 inline-block rounded-full bg-navy px-7 py-2.5 text-sm font-semibold text-white transition hover:bg-navy/90"
         >
           Get in touch
