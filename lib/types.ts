@@ -9,12 +9,6 @@ export interface CreateBookingInput {
   timezone?: string;
 }
 
-export interface ZoomMeeting {
-  joinUrl: string;
-  meetingId: number;
-  password: string;
-}
-
 export interface CalendarEventResult {
   eventId: string | null | undefined;
   htmlLink: string | null | undefined;

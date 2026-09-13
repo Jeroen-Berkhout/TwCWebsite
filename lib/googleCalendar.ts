@@ -1,4 +1,3 @@
-// lib/googleCalendar.ts
 import { google } from 'googleapis';
 import type { CalendarEventResult, BusyRange } from './types';
 
@@ -8,7 +7,11 @@ function getOAuthClient() {
     process.env.GOOGLE_CLIENT_SECRET,
     process.env.GOOGLE_REDIRECT_URI
   );
-  oauth2Client.setCredentials({ refresh_token: process.env.GOOGLE_REFRESH_TOKEN });
+
+  oauth2Client.setCredentials({
+    refresh_token: process.env.GOOGLE_REFRESH_TOKEN,
+  });
+
   return oauth2Client;
 }
 
@@ -17,7 +20,6 @@ interface CreateCalendarEventParams {
   startISO: string;
   endISO: string;
   timezone: string;
-  zoomJoinUrl: string;
   customerEmail: string;
   description?: string;
 }
@@ -27,7 +29,6 @@ export async function createCalendarEvent({
   startISO,
   endISO,
   timezone,
-  zoomJoinUrl,
   customerEmail,
   description = '',
 }: CreateCalendarEventParams): Promise<CalendarEventResult> {
@@ -36,10 +37,15 @@ export async function createCalendarEvent({
 
   const event = {
     summary,
-    description: `${description}\n\nJoin Zoom Meeting: ${zoomJoinUrl}`.trim(),
-    location: zoomJoinUrl,
-    start: { dateTime: startISO, timeZone: timezone },
-    end: { dateTime: endISO, timeZone: timezone },
+    description: description.trim(),
+    start: {
+      dateTime: startISO,
+      timeZone: timezone,
+    },
+    end: {
+      dateTime: endISO,
+      timeZone: timezone,
+    },
     attendees: [{ email: customerEmail }],
     reminders: {
       useDefault: false,
@@ -59,14 +65,22 @@ export async function createCalendarEvent({
   };
 }
 
-export async function getBusyTimes(startISO: string, endISO: string): Promise<BusyRange[]> {
+export async function getBusyTimes(
+  startISO: string,
+  endISO: string
+): Promise<BusyRange[]> {
   console.log('getBusyTimes called with:', { startISO, endISO });
 
   if (!startISO || !endISO) {
-    throw new Error(`getBusyTimes: missing time range (start=${startISO}, end=${endISO})`);
+    throw new Error(
+      `getBusyTimes: missing time range (start=${startISO}, end=${endISO})`
+    );
   }
+
   if (new Date(startISO) >= new Date(endISO)) {
-    throw new Error(`getBusyTimes: timeMin must be before timeMax (start=${startISO}, end=${endISO})`);
+    throw new Error(
+      `getBusyTimes: timeMin must be before timeMax (start=${startISO}, end=${endISO})`
+    );
   }
 
   const auth = getOAuthClient();
