@@ -72,22 +72,19 @@ import Hero from "@/components/Hero";
 import Image from "next/image";
 import Link from "next/link";
 
-const tutorPreviews = [
-  {
-    slug: "jeroen",
-    name: "Jeroen Berkhout",
-    subjectTag: "Science & Maths · A Level & GCSE",
-    photo: "/tutors/jeroen.jpg",
-    reviewCount: 3,
-  },
-  {
-    slug: "tom",
-    name: "Tom Iddon",
-    subjectTag: "Chemistry, Physics & CS · A Level & GCSE",
-    photo: "/tutors/tom.jpg",
-    reviewCount: 0,
-  },
-];
+import { tutors, getTutorStats } from "@/lib/tutors";
+
+const tutorPreviews = tutors.map((tutor) => {
+  const { reviewCount, avgRating } = getTutorStats(tutor);
+  return {
+    slug: tutor.slug,
+    name: tutor.name,
+    subjectTag: tutor.subjectTag,
+    photo: tutor.photo,
+    reviewCount,
+    avgRating,
+  };
+});
 
 const features = [
   {
@@ -130,7 +127,7 @@ export default function HomePage() {
         <div className="rounded-3xl border border-slate-200 bg-purple-100 p-8 sm:p-10">
           <h2 className="text-2xl font-semibold text-navy">Meet our tutors</h2>
           <p className="mt-1 text-sm text-slate-500">
-            Tom and Jeroen — experienced, DBS-checked, and ready to help.
+            Tom and Jeroen: experienced, DBS-checked, and ready to help.
           </p>
 
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -152,7 +149,8 @@ export default function HomePage() {
                   <p className="text-xs text-slate-500">{tutor.subjectTag}</p>
                   {tutor.reviewCount > 0 && (
                     <p className="mt-0.5 text-xs text-amber-600 font-medium">
-                      ★ {tutor.reviewCount} {tutor.reviewCount === 1 ? "review" : "reviews"}
+                      ★ {tutor.avgRating.toFixed(1)} ({tutor.reviewCount}{" "}
+                      {tutor.reviewCount === 1 ? "review" : "reviews"})
                     </p>
                   )}
                 </div>
