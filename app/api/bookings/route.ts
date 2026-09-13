@@ -79,7 +79,8 @@ export async function POST(request: NextRequest) {
           google_event_id
         )
         VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-      `).run(
+      `)
+        .run(
         customerName,
         customerEmail,
         serviceName,
@@ -87,7 +88,7 @@ export async function POST(request: NextRequest) {
         endISO,
         durationMinutes,
         timezone,
-        calendarEvent.eventId
+        calendarEvent.eventId ?? null
       );
     } catch (dbError) {
       // Avoid leaving an orphaned Google Calendar event if the database

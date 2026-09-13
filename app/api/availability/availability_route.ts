@@ -64,11 +64,10 @@ export async function GET(request: NextRequest) {
 
         if (end > dayEnd) continue;
 
-        const overlaps = unavailable.some(
-          (range) =>
-            new Date(range.start) < end &&
-            new Date(range.end) > start
-        );
+        const overlaps = unavailable.some((range) => {
+        if (!range.start || !range.end) return false;
+        return new Date(range.start) < end && new Date(range.end) > start;
+      });
 
         if (!overlaps) {
           slots.push(start.toISOString());
