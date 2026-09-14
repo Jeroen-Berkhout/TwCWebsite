@@ -38,7 +38,7 @@ export const tutors: Tutor[] = [
     subjectTag: "STEM tutor · A-level and GCSE · MSci Chemistry with Computing",
     photo: "/tutors/tom.jpg",
     styleDescription:
-      "Tom is an experienced tutor, teaching students in person across Chemistry, Physics, and Computer Science...",
+      "Tom is an experienced tutor, teaching students in person across Chemistry, Physics, and Computer Science. He is passionate about helping students understand the underlying principles of STEM subjects, and enjoys tailoring lessons to each student's individual learning style. He is also a programmer and web developer, eager to help develop student's coding skills online. Having achieved top grades in his own studies, he is well-equipped to help students reach their academic goals.",
     reviews: [
       { initials: "AT", name: "Andy", role: "Student", date: "27 Jul", rating: 5, avatarColor: "bg-blue-400", text: "Tom was an engaging and entertaining tutor and helped me through my first year of A levels. He was especially helpful in physics and explained what the markschemes were looking for and how to get maximum marks in an exam setting. Tom was able to provide guidance and advice for programming without giving exact answers and showed multiple examples of his own projects as inspiration for my computerscience NEA." },
     ],
